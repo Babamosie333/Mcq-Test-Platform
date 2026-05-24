@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Subjects - Admin</title>
+  <link rel="stylesheet" href="/css/admin.css">
+</head>
+<body>
+  <div class="admin-layout">
+    <aside class="admin-sidebar">
+      <h2>Admin Panel</h2>
+      <nav>
+        <a href="/admin/dashboard.html">Dashboard</a>
+        <a href="/admin/subjects.html" class="active">Subjects</a>
+        <a href="/admin/tests.html">Tests</a>
+        <a href="/admin/questions.html">Questions</a>
+        <a href="/admin/import.html">Excel Import</a>
+        <a href="/admin/results.html">Results</a>
+      </nav>
+    </aside>
+    <main class="admin-main">
+      <div class="admin-topbar">
+        <h1>Subjects</h1>
+        <button class="btn btn-primary" id="addBtn">Add Subject</button>
+      </div>
+      <div id="alert"></div>
+      <table class="data-table">
+        <thead>
+          <tr><th>Name</th><th>Description</th><th>Status</th><th>Actions</th></tr>
+        </thead>
+        <tbody id="tableBody"></tbody>
+      </table>
+    </main>
+  </div>
+  <div id="modal" class="modal-overlay hidden">
+    <div class="modal">
+      <h3 id="modalTitle">Add Subject</h3>
+      <form id="subjectForm">
+        <input type="hidden" id="subjectId">
+        <div class="form-group">
+          <label>Name</label>
+          <input type="text" id="name" title="Enter the subject name" required>
+        </div>
+        <div class="form-group">
+          <label>Description</label>
+          <textarea id="description" rows="3" title="Enter the subject description"></textarea>
+        </div>
+        <div class="form-group">
+          <label><input type="checkbox" id="isActive" checked> Active</label>
+        </div>
+        <div class="modal-actions">
+          <button type="button" class="btn btn-secondary" id="cancelBtn">Cancel</button>
+          <button type="submit" class="btn btn-primary">Save</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <script src="/admin/js/admin-api.js"></script>
+  <script src="/admin/js/subjects.js"></script>
+</body>
+</html>

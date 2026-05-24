@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Take Test</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <div id="timerBar" class="timer-bar hidden">
+    <span>Time left: <span id="timerDisplay">--:--</span></span>
+    <button class="btn btn-secondary btn-sm" id="submitBtn">Submit Test</button>
+  </div>
+
+  <main class="container">
+    <div id="alert"></div>
+
+    <section id="startSection" class="form-panel">
+      <h2 id="testTitle">Loading...</h2>
+      <p id="testMeta" style="color:var(--muted);margin-bottom:1rem;"></p>
+      <form id="startForm">
+        <div class="form-group">
+          <label>Your Name</label>
+          <input type="text" id="studentName" required>
+        </div>
+        <div class="form-group">
+          <label>Mobile Number</label>
+          <input type="tel" id="studentMobile" required pattern="[0-9+\-\s]{8,15}">
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Start Test</button>
+      </form>
+      <p style="margin-top:1rem;"><a href="/tests.html">← Back to tests</a></p>
+    </section>
+
+    <section id="examSection" class="hidden">
+      <div id="questionsContainer"></div>
+      <button class="btn btn-primary btn-block" id="submitBtnBottom" style="margin:1.5rem 0;">Submit Test</button>
+    </section>
+  </main>
+
+  <script src="/js/api.js"></script>
+  <script src="/js/test-runner.js"></script>
+</body>
+</html>
